@@ -3,8 +3,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .models import Project, Task
 from .serializers import ProjectSerializer, TaskSerializer, RegisterSerializer
 from django.contrib.auth.models import User
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
@@ -36,6 +37,7 @@ class TaskViewSet(viewsets.ModelViewSet):
         serializer.save(owner=self.request.user)
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def create_admin(request):
     if not User.objects.filter(username="admin").exists():
         User.objects.create_superuser(
