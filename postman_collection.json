@@ -1,0 +1,62 @@
+{
+  "info": {
+    "_postman_id": "3b15e3f6-482f-44c0-ad30-933839027f5e",
+    "name": "Project Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52927625",
+    "_collection_link": "https://go.postman.co/collection/52927625-3b15e3f6-482f-44c0-ad30-933839027f5e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"selva\",\r\n  \"password\": \"yourpassword\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/token/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "token",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Projects",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8000/api/projects/",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Post Create Task",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/api/tasks/",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
