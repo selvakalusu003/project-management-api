@@ -28,7 +28,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['status']
+    filterset_fields = ['status', 'project']
 
     def get_queryset(self):
         return Task.objects.filter(owner=self.request.user)
