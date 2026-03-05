@@ -14,10 +14,10 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Project Management API",
         default_version='v1',
-        description="API documentation for Project Management API",
+        description="API documentation",
     ),
     public=True,
-    permission_classes=[AllowAny],
+    permission_classes=(AllowAny,),
 )
 
 urlpatterns = [
